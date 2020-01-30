@@ -41,6 +41,16 @@ export class DashboardFacadeService {
                   "type": "boolean",
                   "title": "Done?",
                   "default": false
+                },
+                "date": {
+                  "type": "datepicker",
+                  "title": "Select Date",
+                  "default": new Date()
+                },
+                "numberEnum": {
+                  "type": "number",
+                  "title": "Number enum",
+                  "enum": [1,2,3]
                 }
               }
             }
@@ -48,17 +58,14 @@ export class DashboardFacadeService {
         }
       },
       "model": {
-        "title": "My current tasks",
+        "title": "Tasks",
         "tasks": [
           {
             "title": "My first task",
-            "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "done": true
-          },
-          {
-            "title": "My second task",
-            "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
-            "done": false
+            "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do",
+            "done": true,
+            "date": new Date(),
+            "numberEnum": 2,
           }
         ]
       }

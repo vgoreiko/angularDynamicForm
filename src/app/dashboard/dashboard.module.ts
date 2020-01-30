@@ -16,17 +16,24 @@ import {
 import {ArrayTypeComponent} from "./array.type";
 import {ObjectTypeComponent} from "./object.type";
 import {NullTypeComponent} from "./null.type";
-import {MultiSchemaTypeComponent} from "./multischema.type";
+import {DatepickerTypeComponent} from "./datepicker-type.component";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
     DashboardComponent, ArrayTypeComponent,
     ObjectTypeComponent,
-    MultiSchemaTypeComponent,
-    NullTypeComponent,],
+    NullTypeComponent,
+    DatepickerTypeComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FormlyModule.forRoot({
       validationMessages: [
         {name: 'required', message: 'This field is required'},
@@ -68,10 +75,23 @@ import {MultiSchemaTypeComponent} from "./multischema.type";
         {name: 'null', component: NullTypeComponent, wrappers: ['form-field']},
         {name: 'array', component: ArrayTypeComponent},
         {name: 'object', component: ObjectTypeComponent},
-        {name: 'multischema', component: MultiSchemaTypeComponent},
+        {
+          name: 'datepicker',
+          component: DatepickerTypeComponent,
+          wrappers: ['form-field'],
+          defaultOptions: {
+            defaultValue: new Date(),
+            templateOptions: {
+              datepickerOptions: {},
+            },
+          },
+        },
       ],
     }),
     FormlyMaterialModule,
+  ],
+  providers: [
+    MatDatepickerModule,
   ]
 })
 export class DashboardModule {
