@@ -1,9 +1,10 @@
 <nav>
   some nav here
 </nav>
-<section>
-  <form [formGroup]="form" (ngSubmit)="submit(model)">
-    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</section>
+
+<form class="content" [formGroup]="form" (ngSubmit)="submit(model)">
+  <div class="column">
+      <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

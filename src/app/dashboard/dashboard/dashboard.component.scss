@@ -1,9 +1,9 @@
 :host {
   display: grid;
   grid-template-areas:
-    "nav section"
-    "nav section"
-    "nav section";
+    "nav form"
+    "nav form"
+    "nav form";
   grid-template-rows: 80px 1fr;
   grid-template-columns: 200px 1fr;
 }
@@ -13,11 +13,11 @@ nav {
   overflow: auto;
 }
 
-section {
-  background: #ABABAB;
-  grid-area: section;
+form, nav {
+  padding: 20px 5px 5px;
 }
 
-section, nav {
-  padding: 20px 5px 5px;
+.content {
+  grid-area: form;
+  background: #ABABAB;
 }
