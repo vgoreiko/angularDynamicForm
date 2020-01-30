@@ -1,0 +1,23 @@
+:host {
+  display: grid;
+  grid-template-areas:
+    "nav section"
+    "nav section"
+    "nav section";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 200px 1fr;
+}
+
+nav {
+  grid-area: nav;
+  overflow: auto;
+}
+
+section {
+  background: #ABABAB;
+  grid-area: section;
+}
+
+section, nav {
+  padding: 20px 5px 5px;
+}

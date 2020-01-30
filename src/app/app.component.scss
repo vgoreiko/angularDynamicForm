@@ -1,0 +1,25 @@
+:host {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav"
+    "app-dashboard app-dashboard app-dashboard"
+    "footer footer footer";
+  grid-template-rows: 64px 1fr 64px;
+  grid-template-columns: 0 1fr 0;
+  height: 100vh;
+}
+
+nav {
+  grid-area: nav;
+  overflow: auto;
+}
+
+section {
+  background: #ABABAB;
+  grid-area: section;
+  padding: 5px;
+}
+
+footer {
+  grid-area: footer;
+}
