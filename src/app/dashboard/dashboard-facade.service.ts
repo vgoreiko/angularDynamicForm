@@ -51,6 +51,11 @@ export class DashboardFacadeService {
                   "type": "number",
                   "title": "Number enum",
                   "enum": [1,2,3]
+                },
+                "stringEnum": {
+                  "type": "string",
+                  "title": "String enum",
+                  "enum": ["John Doe", "Vasyl Stus", "Petro Kanistra"]
                 }
               }
             }
@@ -66,6 +71,7 @@ export class DashboardFacadeService {
             "done": true,
             "date": new Date(),
             "numberEnum": 2,
+            "stringEnum": "Petro Kanistra"
           }
         ]
       }
