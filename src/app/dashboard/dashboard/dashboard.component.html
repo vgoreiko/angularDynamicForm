@@ -2,9 +2,7 @@
   some nav here
 </nav>
 
-<form class="content" [formGroup]="form" (ngSubmit)="submit(model)">
-  <div class="column">
-      <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+<form class="content" [formGroup]="form" (ngSubmit)="submit(model)" *ngIf="fields">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+  <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Submit</button>
 </form>
